@@ -1,0 +1,13 @@
+@url="https://localhost:5050"
+
+### Create Products
+POST {{url}}/api/CreateProduct
+Content-Type: application/json
+
+{
+  "name": "PS5",
+  "category":"Electronics",
+  "price": 1330.5,
+  "description": "PS5 - Sony",
+  "imagePath": ""
+}
