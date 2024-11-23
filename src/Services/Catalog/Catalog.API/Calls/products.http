@@ -1,4 +1,4 @@
-@url="https://localhost:5050"
+@url=https://localhost:5050
 
 ### Create Products
 POST {{url}}/products

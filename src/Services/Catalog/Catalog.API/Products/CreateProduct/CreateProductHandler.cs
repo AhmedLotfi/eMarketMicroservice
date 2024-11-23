@@ -20,6 +20,6 @@ internal class CreateProductCommandHandler :ICommandHandler<CreateProductCommand
        }
 }
 
-public abstract record CreateProductCommand(string Name, List<string> Category, string Description,string ImagePath, decimal Price)
+public record CreateProductCommand(string Name, List<string> Category, string Description,string ImagePath, decimal Price)
        :ICommand<CreateProductResult>;
 public record CreateProductResult(Guid Id);
