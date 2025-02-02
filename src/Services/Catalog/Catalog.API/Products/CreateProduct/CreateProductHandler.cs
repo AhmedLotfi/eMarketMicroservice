@@ -1,9 +1,7 @@
-using BuildingBlocks.CQRS;
 using Catalog.API.Models;
-
 namespace Catalog.API.Products.CreateProduct;
 
-internal class CreateProductCommandHandler :ICommandHandler<CreateProductCommand, CreateProductResult>
+internal class CreateProductCommandHandler (IDocumentSession session) :ICommandHandler<CreateProductCommand, CreateProductResult>
 {
        public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken ct)
        {
@@ -16,7 +14,10 @@ internal class CreateProductCommandHandler :ICommandHandler<CreateProductCommand
                      ImagePath = command.ImagePath,
               };
 
-              return new(Guid.NewGuid());
+              session.Store(product);
+              await session.SaveChangesAsync(ct);
+
+              return new CreateProductResult(product.Id);
        }
 }
 
