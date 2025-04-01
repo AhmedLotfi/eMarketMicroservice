@@ -6,6 +6,9 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>Catalog.API</RootNamespace>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <UserSecretsId>de03de37-6142-49cd-81b8-c72c1f75d9eb</UserSecretsId>
+        <DockerfileContext>..\..\..</DockerfileContext>
+        <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
     </PropertyGroup>
 
     <ItemGroup>
@@ -29,6 +32,7 @@
     <ItemGroup>
       <PackageReference Include="Carter" Version="8.2.1" />
       <PackageReference Include="Marten" Version="7.37.0" />
+      <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
     </ItemGroup>
 
 </Project>
